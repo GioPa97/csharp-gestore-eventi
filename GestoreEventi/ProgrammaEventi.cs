@@ -1,4 +1,6 @@
-﻿namespace GestoreEventi
+﻿using System.Diagnostics.Tracing;
+
+namespace GestoreEventi
 {
     internal class ProgrammaEventi
     {
@@ -40,6 +42,9 @@
           
             for (int i = 0; i < ContatoreEventi(); i++)
             {
+                Console.WriteLine("Il numero di eventi nel programma è" + " " + ContatoreEventi()) ;
+                Console.WriteLine("Ecco il tuo programma eventi:");
+                Console.WriteLine();
 
                 Console.WriteLine(eventi[i]);
        

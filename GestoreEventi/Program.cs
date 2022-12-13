@@ -7,7 +7,7 @@ Console.Write("Inserisci il nome dell'evento:" +" ");
 string nome = Console.ReadLine();
 Console.Write("Inserisci la data dell'evento (gg/mm/yyyy):" + " ");
 string data = Console.ReadLine();
-DateTime dataParse = DateTime.Parse(data);
+DateTime dataParse = DateTime.ParseExact(data, "dd/MM/yyyy", null);
 Console.Write("Inserisci il numero di posti totali:" + " ");
 int capienza = int.Parse(Console.ReadLine());
 Console.WriteLine();
@@ -52,12 +52,14 @@ for (int i = 0; i < NumeroEventi; i++)
     string titolo = Console.ReadLine();
     Console.Write("Inserisci la data (gg / MM / yyyy) del evento:" +" ");
     data = Console.ReadLine();
+    dataParse = DateTime.ParseExact(data, "dd/MM/yyyy", null);
     Console.Write("Inserisci il numero di posti totali:" + " ");
     capienza = int.Parse(Console.ReadLine());
     Console.WriteLine();
     Evento evento = new(titolo, dataParse, capienza);
     EventiProgrammati.AggiungiEvento(evento);
 }
+
 EventiProgrammati.GetEventi();
 
 

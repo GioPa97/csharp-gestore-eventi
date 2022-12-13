@@ -47,6 +47,7 @@
 
         public void setData(DateTime data)
         {
+
             DateTime dataFlag = DateTime.Now;
 
             if (data > dataFlag)
@@ -55,7 +56,7 @@
             }
             else
             {
-                throw new Exception();
+                throw new Exception("La data inserita non è valida!");
             }
 
         }
