@@ -74,7 +74,14 @@
 
         private void setNumeroPostiPrenotati(int numeroPostiPrenotati)
         {
-            this.numeroPostiPrenotati = numeroPostiPrenotati;
+            if (numeroPostiPrenotati > 0)
+            {
+                this.numeroPostiPrenotati = numeroPostiPrenotati;
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
 
 
@@ -116,7 +123,7 @@
             }
             Console.WriteLine("Numero di posti prenotati=" + " " + this.numeroPostiPrenotati);
             Console.WriteLine("Numero di posti disponibili=" + " " + (capienzaMassima - this.numeroPostiPrenotati));
-            Console.WriteLine();
+
             return numeroPostiDaPrenotare;
 
 
@@ -141,6 +148,7 @@
             {
                 throw new Exception();
             }
+            
 
             Console.WriteLine("Numero di posti prenotati=" + " " + this.numeroPostiPrenotati);
             Console.WriteLine("Numero di posti disponibili=" + " " + (capienzaMassima - this.numeroPostiPrenotati));

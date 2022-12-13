@@ -24,18 +24,37 @@ do
 {
     Console.Write("Vuoi disdire dei posti (si/no)");
     flag = Console.ReadLine();
-    if (flag == "si")
+    if (flag.ToLower() == "si")
     {
         Console.Write("Indica il numero di posti da disdire:");
         int disdetta = int.Parse(Console.ReadLine());
         eventoUno.DisdiciPosti(disdetta);
     }
 }
-while (flag != "no");
+while (flag.ToLower() != "no");
+Console.WriteLine("Ok va bene!");
+Console.WriteLine();
+
+
+//milestone 4
+
+Console.WriteLine("Inserisci il nome del tuo programma Eventi:" + " ");
+string nomeProgramma = Console.ReadLine();
+ProgrammaEvento EventiProgrammati = new(nomeProgramma);
+Console.WriteLine("Indica il numero di eventi da inserire:");
+int NumeroEventi = int.Parse(Console.ReadLine());
+for (int i = 0; i < NumeroEventi; i++)
 {
-    Console.WriteLine("Ok va bene!");
-    Console.WriteLine();
+    Console.Write("Inserisci il nome del evento:");
+    string titolo = Console.ReadLine();
+    Console.Write("Inserisci la data (gg / MM / yyyy) del evento:");
+    data = Console.ReadLine();
+    Console.Write("Inserisci il numero di posti totali:");
+    capienza = int.Parse(Console.ReadLine());
+    Evento evento = new(titolo, dataParse, capienza);
+    EventiProgrammati.AggiungiEvento(evento);
 }
 
+Console.WriteLine(Evento);
 
 
