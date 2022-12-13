@@ -3,12 +3,12 @@
 
 using GestoreEventi;
 
-Console.Write("Inserisci il nome dell'evento:");
+Console.Write("Inserisci il nome dell'evento:" +" ");
 string nome = Console.ReadLine();
-Console.Write("Inserisci la data dell'evento (gg/mm/yyyy):");
+Console.Write("Inserisci la data dell'evento (gg/mm/yyyy):" + " ");
 string data = Console.ReadLine();
 DateTime dataParse = DateTime.Parse(data);
-Console.Write("Inserisci il numero di posti totali:");
+Console.Write("Inserisci il numero di posti totali:" + " ");
 int capienza = int.Parse(Console.ReadLine());
 Console.WriteLine();
 
@@ -46,11 +46,12 @@ int NumeroEventi = int.Parse(Console.ReadLine());
 Console.WriteLine();
 for (int i = 0; i < NumeroEventi; i++)
 {
-    Console.Write("Inserisci il nome del evento:");
+    int ordine = i + 1;
+    Console.Write("Inserisci il nome del" + " " +ordine+"°" +" " + "evento:" +" ");
     string titolo = Console.ReadLine();
-    Console.Write("Inserisci la data (gg / MM / yyyy) del evento:");
+    Console.Write("Inserisci la data (gg / MM / yyyy) del evento:" +" ");
     data = Console.ReadLine();
-    Console.Write("Inserisci il numero di posti totali:");
+    Console.Write("Inserisci il numero di posti totali:" + " ");
     capienza = int.Parse(Console.ReadLine());
     Console.WriteLine();
     Evento evento = new(titolo, dataParse, capienza);
