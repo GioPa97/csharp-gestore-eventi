@@ -80,13 +80,13 @@
 
         //Costruttori
 
-        public Evento(string titolo, DateTime data, int capienzaMassima, int numeroPostiPrenotati)
+        public Evento(string titolo, DateTime data, int capienzaMassima)
         {
 
             this.setTitolo(titolo);
             this.setData(data);
             this.capienzaMassima = capienzaMassima;
-            this.numeroPostiPrenotati = numeroPostiPrenotati;
+
         }
 
 
@@ -98,8 +98,7 @@
 
 
 
-        //Metodi public
-
+        //Metodi publici
         public int PrenotaPosti(int numeroPostiDaPrenotare)
         {
             DateTime dataFlag = DateTime.Now;
@@ -115,7 +114,9 @@
             {
                 throw new Exception();
             }
-
+            Console.WriteLine("Numero di posti prenotati=" + " " + this.numeroPostiPrenotati);
+            Console.WriteLine("Numero di posti disponibili=" + " " + (capienzaMassima - this.numeroPostiPrenotati));
+            Console.WriteLine();
             return numeroPostiDaPrenotare;
 
 
@@ -141,6 +142,9 @@
                 throw new Exception();
             }
 
+            Console.WriteLine("Numero di posti prenotati=" + " " + this.numeroPostiPrenotati);
+            Console.WriteLine("Numero di posti disponibili=" + " " + (capienzaMassima - this.numeroPostiPrenotati));
+            Console.WriteLine();
             return numeroPostiDaDisdire;
         }
         public override string ToString()
