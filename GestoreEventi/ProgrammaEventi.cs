@@ -1,12 +1,12 @@
 ﻿namespace GestoreEventi
 {
-    internal class ProgrammaEvento
+    internal class ProgrammaEventi
     {
         //Attributi
         string titolo;
         List<Evento> eventi;
         //Costruttori
-        public ProgrammaEvento(string titolo)
+        public ProgrammaEventi(string titolo)
         {
             this.titolo = titolo;
             eventi = new List<Evento>();
@@ -41,7 +41,7 @@
             for (int i = 0; i < ContatoreEventi(); i++)
             {
 
-                Console.WriteLine();
+                Console.WriteLine(eventi[i]);
        
 
             }

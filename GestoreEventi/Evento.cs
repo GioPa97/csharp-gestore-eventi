@@ -6,7 +6,7 @@
         private string titolo;
         private DateTime data;
         private int capienzaMassima;
-        private int numeroPostiPrenotati = 0;
+        private int numeroPostiPrenotati;
 
         //Stato
         //Getter
@@ -17,7 +17,7 @@
 
         public DateTime getData()
         {
-            return data;
+            return this.data;
         }
 
         public int getCapienzaMassima()
@@ -90,9 +90,10 @@
         public Evento(string titolo, DateTime data, int capienzaMassima)
         {
 
-            this.setTitolo(titolo);
-            this.setData(data);
+            setTitolo(titolo);
+            setData(data);
             this.capienzaMassima = capienzaMassima;
+            numeroPostiPrenotati = 0;
 
         }
 
@@ -161,7 +162,7 @@
         }
         public override string ToString()
         {
-            string stampaEvento = "Data:" + getData() + " - " + "Titolo" + getTitolo();
+            string stampaEvento = getData() + " - " + getTitolo();
             return stampaEvento;
         }
     }

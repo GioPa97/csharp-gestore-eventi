@@ -35,12 +35,13 @@ while (flag.ToLower() != "no");
 Console.WriteLine("Ok va bene!");
 Console.WriteLine();
 
+eventoUno.ToString();
 
 //milestone 4
 
 Console.Write("Inserisci il nome del tuo programma Eventi:" + " ");
 string nomeProgramma = Console.ReadLine();
-ProgrammaEvento EventiProgrammati = new(nomeProgramma);
+ProgrammaEventi EventiProgrammati = new(nomeProgramma);
 Console.Write("Indica il numero di eventi da inserire:");
 int NumeroEventi = int.Parse(Console.ReadLine());
 Console.WriteLine();
