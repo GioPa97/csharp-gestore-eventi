@@ -147,7 +147,8 @@
             else if (numeroPostiDaDisdire > this.numeroPostiPrenotati)
             {
                 throw new Exception("Non puoi disdire più posti di quanti ne sono prenotati!");
-            } else if (numeroPostiDaDisdire > this.capienzaMassima) 
+            }
+            else if (numeroPostiDaDisdire > this.capienzaMassima)
             {
                 throw new Exception("Non puoi disdire più posti di quanti ce ne sono disponibili!");
             }
@@ -160,8 +161,8 @@
         }
         public override string ToString()
         {
-            return "Numero posti prenotati = " + " " + this.numeroPostiPrenotati;
-
+            string stampaEvento = "Data:" + getData() + " - " + "Titolo" + getTitolo();
+            return stampaEvento;
         }
     }
 }

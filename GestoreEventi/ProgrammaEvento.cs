@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GestoreEventi
+﻿namespace GestoreEventi
 {
     internal class ProgrammaEvento
     {
@@ -35,7 +29,7 @@ namespace GestoreEventi
         //-----------------------------------------------------------
         public int ContatoreEventi()
         {
-            return eventi.Count;
+            return eventi.Count();
         }
         public void SvuotaLista()
         {
@@ -43,15 +37,15 @@ namespace GestoreEventi
         }
         public void GetEventi()
         {
-            Console.WriteLine(titolo + ":");
+          
             for (int i = 0; i < ContatoreEventi(); i++)
             {
-                int indice = i + 1;
-                Console.WriteLine(indice + "° Evento" + eventi[i]);
+
+                Console.WriteLine();
+       
 
             }
         }
-
 
 
 

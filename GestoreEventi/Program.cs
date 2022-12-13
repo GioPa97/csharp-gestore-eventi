@@ -57,6 +57,7 @@ for (int i = 0; i < NumeroEventi; i++)
     Evento evento = new(titolo, dataParse, capienza);
     EventiProgrammati.AggiungiEvento(evento);
 }
+EventiProgrammati.GetEventi();
 
 
 
