@@ -100,28 +100,62 @@
 
         //Metodi public
 
-        public int PrenotaPosti(int posti)
+        public int PrenotaPosti(int numeroPostiDaPrenotare)
         {
             DateTime dataFlag = DateTime.Now;
-            if (posti < this.capienzaMassima)
+            if (numeroPostiDaPrenotare < this.capienzaMassima)
             {
-                int nuoviPostiPrenotati = posti + this.numeroPostiPrenotati;
-            } else if (this.data < dataFlag)
+                this.numeroPostiPrenotati = numeroPostiDaPrenotare + this.numeroPostiPrenotati;
+            }
+            else if (this.data < dataFlag)
+            {
+                throw new Exception();
+            }
+            else if (numeroPostiDaPrenotare > this.capienzaMassima)
             {
                 throw new Exception();
             }
 
-            return nuoviPostiPrenotati;
+            return numeroPostiDaPrenotare;
 
 
         }
+
+        
+        
+        public int DisdiciPosti(int numeroPostiDaDisdire)
+        {
+
+
+            DateTime dataFlag = DateTime.Now;
+            if (numeroPostiDaDisdire < this.capienzaMassima)
+            {
+                this.numeroPostiPrenotati =  this.numeroPostiPrenotati - numeroPostiDaDisdire;
+            }
+            else if (this.data < dataFlag)
+            {
+                throw new Exception();
+            }
+            else if (numeroPostiDaDisdire > this.numeroPostiPrenotati)
+            {
+                throw new Exception();
+            }
+
+            return numeroPostiDaDisdire;
+
+
+
+
+
+
+
+        }
+
+
+
+
 
         /*
-        public int DisdiciPosti()
-        {
-            return
-        }
-
         public override string ToString()
         {
             return base.ToString();
