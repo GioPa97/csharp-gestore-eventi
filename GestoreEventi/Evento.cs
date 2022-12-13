@@ -121,8 +121,8 @@
 
         }
 
-        
-        
+
+
         public int DisdiciPosti(int numeroPostiDaDisdire)
         {
 
@@ -130,7 +130,7 @@
             DateTime dataFlag = DateTime.Now;
             if (numeroPostiDaDisdire < this.capienzaMassima)
             {
-                this.numeroPostiPrenotati =  this.numeroPostiPrenotati - numeroPostiDaDisdire;
+                this.numeroPostiPrenotati = this.numeroPostiPrenotati - numeroPostiDaDisdire;
             }
             else if (this.data < dataFlag)
             {
@@ -142,26 +142,11 @@
             }
 
             return numeroPostiDaDisdire;
-
-
-
-
-
-
-
         }
-
-
-
-
-
-        /*
         public override string ToString()
         {
-            return base.ToString();
-        }
+            return "Numero posti prenotati = " + " " + this.numeroPostiPrenotati;
 
-        //Metodi privati
-        */
+        }
     }
 }
