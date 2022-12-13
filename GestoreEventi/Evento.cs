@@ -109,7 +109,7 @@
         public int PrenotaPosti(int numeroPostiDaPrenotare)
         {
             DateTime dataFlag = DateTime.Now;
-            if (numeroPostiDaPrenotare < this.capienzaMassima)
+            if (numeroPostiDaPrenotare <= this.capienzaMassima)
             {
                 this.numeroPostiPrenotati = numeroPostiDaPrenotare + this.numeroPostiPrenotati;
             }
@@ -136,7 +136,7 @@
 
 
             DateTime dataFlag = DateTime.Now;
-            if (numeroPostiDaDisdire < this.capienzaMassima)
+            if (numeroPostiDaDisdire <= this.numeroPostiPrenotati)
             {
                 this.numeroPostiPrenotati = this.numeroPostiPrenotati - numeroPostiDaDisdire;
             }
@@ -146,9 +146,12 @@
             }
             else if (numeroPostiDaDisdire > this.numeroPostiPrenotati)
             {
-                throw new Exception();
+                throw new Exception("Non puoi disdire più posti di quanti ne sono prenotati!");
+            } else if (numeroPostiDaDisdire > this.capienzaMassima) 
+            {
+                throw new Exception("Non puoi disdire più posti di quanti ce ne sono disponibili!");
             }
-            
+
 
             Console.WriteLine("Numero di posti prenotati=" + " " + this.numeroPostiPrenotati);
             Console.WriteLine("Numero di posti disponibili=" + " " + (capienzaMassima - this.numeroPostiPrenotati));

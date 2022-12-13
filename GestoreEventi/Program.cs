@@ -38,11 +38,12 @@ Console.WriteLine();
 
 //milestone 4
 
-Console.WriteLine("Inserisci il nome del tuo programma Eventi:" + " ");
+Console.Write("Inserisci il nome del tuo programma Eventi:" + " ");
 string nomeProgramma = Console.ReadLine();
 ProgrammaEvento EventiProgrammati = new(nomeProgramma);
-Console.WriteLine("Indica il numero di eventi da inserire:");
+Console.Write("Indica il numero di eventi da inserire:");
 int NumeroEventi = int.Parse(Console.ReadLine());
+Console.WriteLine();
 for (int i = 0; i < NumeroEventi; i++)
 {
     Console.Write("Inserisci il nome del evento:");
@@ -51,10 +52,10 @@ for (int i = 0; i < NumeroEventi; i++)
     data = Console.ReadLine();
     Console.Write("Inserisci il numero di posti totali:");
     capienza = int.Parse(Console.ReadLine());
+    Console.WriteLine();
     Evento evento = new(titolo, dataParse, capienza);
     EventiProgrammati.AggiungiEvento(evento);
 }
 
-Console.WriteLine(Evento);
 
 
